@@ -6,6 +6,7 @@
   import Works from './components/Works.vue';
   import Blogs from './components/Blogs.vue';
   import Contact from './components/Contact.vue';
+  import Footer from './components/Footer.vue';
 </script>
 
 <template>
@@ -21,4 +22,8 @@
     <Blogs />
     <Contact />
   </main>
+
+  <footer>
+    <Footer />
+  </footer>
 </template>
