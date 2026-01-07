@@ -4,6 +4,7 @@
   import About from './components/About.vue';
   import Skills from './components/Skills.vue';
   import Works from './components/Works.vue';
+  import Blogs from './components/Blogs.vue';
 </script>
 
 <template>
@@ -16,5 +17,6 @@
     <About />
     <Skills />
     <Works />
+    <Blogs />
   </main>
 </template>
