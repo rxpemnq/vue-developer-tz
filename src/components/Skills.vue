@@ -1,15 +1,14 @@
-<script></script>
+<script setup>
+    import FloatingMouse from './FloatingMouse.vue';
+</script>
 <template>
     <div class="relative bg-[#43454D]">
     <img src="../assets/images/background/skills.png" alt="Bg with code" class="absolute z-1 object-cover w-full h-full top-0 left-0">
-     <section class="w-416 my-0 mx-auto">
+     <section id="skills" class="w-416 my-0 mx-auto">
         <div class="z-1 relative">
             <div class="relative z-1 pt-32 pb-16 flex flex-col gap-16">
                 <div class="flex justify-center gap-4">
-                    <div class="flex flex-col justify-center items-center gap-4">
-                        <img src="../assets/icons/common/mouse.svg" alt="Mouse icon" class="w-8 h-11 animate-float">
-                        <div class="w-0 h-20 border border-dashed border-white"></div>
-                    </div>
+                    <FloatingMouse />
                 </div>
                 <div class="flex flex-col gap-4">
                     <h1 class="text-white font-family-ubuntu text-[64px] leading-18 tracking-normal text-center capitalize">

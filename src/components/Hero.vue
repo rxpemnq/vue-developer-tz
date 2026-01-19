@@ -1,7 +1,8 @@
-<script></script>
+<script>
+</script>
 <template>
-    <div class="bg-[#43454D]">
-            <section class="w-416 my-0 mx-auto">
+    <div class="bg-[#43454D] h-screen">
+            <section id="home" class="w-416 my-0 mx-auto">
                 <div class="py-16 px-32">
                     <h1 class="text-main font-family-ubuntu text-[117px] leading-33.5 tracking-normal text-center capitalize">Developer</h1>
                         <div class="mt-16 flex gap-32">
@@ -63,7 +64,7 @@
                                         <span class="w-8.5 h-4.5 text-main font-family-ibm text-[14px] leading-4.5 tracking-normal text-left lowercase">&lt;/p&gt;</span>
                                         <div class="flex pl-6 gap-4 items-center">
                                             <span class="text-main font-family-ibm text-[32px] leading-10.5 tracking-normal">Let's talk</span>
-                                            <div class="flex flex-row justify-start items-start p-2 rounded-[40px] bg-[#58585c] hover:scale-110 transition-[100,100]">
+                                            <div class="flex flex-row justify-start items-start p-2 rounded-[40px] bg-[#58585c] hover:scale-110 transition-[100,100] active:scale-90">
                                                 <img src="../assets/icons/common/icon-mail.svg" alt="Email icon" class="w-6 h-6 bg-contain bg-no-repeat">
                                             </div>
                                         </div>

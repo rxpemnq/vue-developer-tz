@@ -1,6 +1,6 @@
 <script></script>
 <template>
-    <footer class="w-full bg-[#292F36] pb-4">
+    <footer class="w-full bg-[#292F36] pb-2 pt-2">
         <div class="py-1.75 px-32 flex flex-row justify-between items-center">
             <div class="footer-copyright">
                 <span class="text-white font-family-ubuntu text-[16px] leading-4.5 tracking-normal text-center hover:scale-105 transition-[100,100] active:scale-90">© 2023 SinanTokmak. All rights reserved.</span>
