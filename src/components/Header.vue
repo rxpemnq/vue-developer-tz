@@ -21,7 +21,7 @@ const socialMedia = [
     id: 2,
     label: "Discord",
     icon: "src/assets/icons/social/discord.svg",
-    href: "https://github.com/rxpemnq",
+    href: "https://habr.com/ru/news/",
   },
   {
     id: 3,
@@ -30,6 +30,12 @@ const socialMedia = [
     href: "https://github.com/rxpemnq",
   },
 ];
+
+const openLink = (href) => {
+  if (href) {
+    window.open(href, "_blank", "noopener,noreferrer");
+  }
+};
 </script>
 <template>
   <header>
@@ -75,14 +81,15 @@ const socialMedia = [
                 />
               </div>
               <div
+                @click="openLink"
                 v-for="(media, index) in socialMedia"
                 :key="index"
                 class="flex flex-row gap-8 text-white font-family-ibm text-[16px] leading-5 tracking-normal text-left capitalize"
               >
                 <Button
+                  @click="openLink(media.href)"
                   :icon="media.icon"
                   :label="media.label"
-                  :href="media.href"
                 />
               </div>
             </div>

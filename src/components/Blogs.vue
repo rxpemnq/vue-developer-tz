@@ -4,10 +4,7 @@ import { useRoute } from "vue-router";
 import FloatingMouse from "./FloatingMouse.vue";
 import viewMoreBtn from "./view-more-btn.vue";
 import { ref, computed, onMounted } from "vue";
-// import { AxiosLib } from "@/libs/axios";
 import { useNews } from "./hooks/useNews";
-
-// const axios = new AxiosLib();
 
 const route = useRoute();
 
@@ -15,50 +12,15 @@ const checkRoute = computed(() => {
   return route.path === "/blogs";
 });
 
-const arr = [
-  { id: 1, title: "123", content: "321" },
-  { id: 2, title: "123456", content: "321321" },
-];
-
 const { news, loading, error } = useNews("https://3dnews.ru/news/rss");
 
-const slicedContent = async () => {
-  if (checkRoute.value === false) {
-    // Ждем 2 секунды
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    // Проверяем, что данные пришли
-    if (!news.value || news.value.length === 0) {
-      console.log("Данные еще не загружены");
-      return [];
-    }
-
-    return news.value.slice(0, 1);
-  } else {
-    console.log("true");
-    return news.value || [];
+const displayedNews = computed(() => {
+  if (!news.value || news.value.length === 0) {
+    return [];
   }
-};
 
-// console.log("blogs", blogs);
-
-onMounted(() => {
-  slicedContent().then((result) => {
-    console.log("Результат:", result);
-  });
+  return checkRoute.value ? news.value : news.value.slice(0, 1);
 });
-
-// let blogs = ref([]);
-
-// onMounted(async () => {
-//   const blogsData = await axios.get(
-//     "https://api.rss2json.com/v1/api.json?rss_url=https://3dnews.ru/news/rss"
-//   );
-
-//   blogs = blogsData;
-
-//   return blogsData;
-// });
 </script>
 <template>
   <div class="bg-[#43454D]">
@@ -82,7 +44,7 @@ onMounted(() => {
         <div class="pl-76.5 pr-76.5 flex flex-col gap-10">
           <div class="border-t border-white"></div>
           <div
-            v-for="(blog, index) in news"
+            v-for="(blog, index) in displayedNews"
             :key="index"
             class="border-solid border-white border-b pt-6 pb-16"
           >

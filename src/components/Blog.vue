@@ -9,8 +9,6 @@ const props = defineProps([
   "currentNews.link",
 ]);
 
-// console.log("props", props);
-
 let slicedContent;
 
 if (props.description.length > 100) {
